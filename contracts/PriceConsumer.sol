@@ -38,7 +38,7 @@ contract PriceConsumer {
             "Invalid decimals"
         );
 
-        uint256 decimals = uint256(10**uint256(_decimals));
+        int256 decimals = int256(10**uint256(_decimals));
 
         (, int256 basePrice, , , ) = AggregatorV3Interface(_base)
             .latestRoundData();
@@ -50,7 +50,7 @@ contract PriceConsumer {
         uint8 quoteDecimals = AggregatorV3Interface(_quote).decimals();
         quotePrice = scalePrice(quotePrice, quoteDecimals, _decimals);
 
-        return (basePrice / quotePrice) * decimals;
+        return (basePrice * decimals) / quotePrice;
     }
 
     /**
