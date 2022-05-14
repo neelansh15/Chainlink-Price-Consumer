@@ -27,7 +27,7 @@ async function main() {
 
   console.log("priceConsumer deployed to:", priceConsumer.address);
 
-  writeFileSync("./abi/PriceConsumer.json", JSON.stringify(data));
+  writeFileSync("./abis/PriceConsumer.json", JSON.stringify(data));
 }
 
 // We recommend this pattern to be able to use async/await everywhere
