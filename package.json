@@ -33,6 +33,6 @@
     "typescript": "^4.6.4"
   },
   "dependencies": {
-    "chainlink": "^0.8.2"
+    "@chainlink/contracts": "^0.4.1"
   }
 }
